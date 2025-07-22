@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Complaints</title>
+  <link rel="stylesheet" href="My_complaint.css">
+</head>
+<body>
+  <header>
+    <img src="Strath.jpg" alt="Strathmore Logo" class="logo">
+    <button class="help-btn" title="Help">?</button>
+  </header>
+
+   <nav>
+    <a href="submit.html">Submit Complaint</a>
+    <a href="View_complaint_status.html">View Complaint Status</a>
+    <a href="My_complaints.html">My Complaints</a>
+    <a href="Support.html">Support</a>
+    <a href="index.html">Logout</a>
+  </nav>
+
+  <main>
+    <h2>My Complaints</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="complaintsTableBody">
+        <!-- Complaints will be inserted here -->
+      </tbody>
+    </table>
+
+    <button id="deleteBtn" style="display: none;">Delete Selected Complaint</button>
+  </main>
+
+  <script src="My_complaints.js"></script>
+</body>
+</html>

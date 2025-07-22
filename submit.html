@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Complaint</title>
+  <link rel="stylesheet" href="submit.css">
+</head>
+<body>
+  <header>
+    <img src="strathmore-logo.png" alt="Strathmore Logo" class="logo">
+    <button class="help-btn" title="Help">?</button>
+  </header>
+
+  <nav>
+    <a href="submit.html">Submit Complaint</a>
+    <a href="View_complaint_status.html">View Complaint Status</a>
+    <a href="My_complaints.html">My Complaints</a>
+    <a href="Support.html">Support</a>
+    <a href="index.html">Logout</a>
+  </nav>
+
+  <main>
+    <h2>Submit a Complaint</h2>
+    <form id="complaintForm">
+      <label for="category">Category:</label>
+      <select id="category" required>
+        <option value="">Select Category</option>
+        <option value="Academics">Academics</option>
+        <option value="Facilities">Facilities</option>
+        <option value="Finance">Finance</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="description">Complaint:</label>
+      <textarea id="description" rows="4" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <script src="submit.js"></script>
+</body>
+</html>

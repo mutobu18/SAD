@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Complaint System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="Strath.jpg" alt="Strathmore Logo" class="logo">
+    <button class="help-btn" onclick="alert('For help, contact studentaffairs@strathmore.edu')">Help</button>
+  </header>
+
+  <main>
+    <h2>Student Login</h2>
+    <form onsubmit="return login()">
+      <input type="text" id="studentId" placeholder="Student ID" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href="register.html">Create one</a></p>
+    </form>
+  </main>
+
+  <script>
+  function login() {
+    const id = document.getElementById('studentId').value;
+    const password = document.getElementById('password').value;
+
+    // Get users from localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Look for a matching user
+    const user = users.find(u => u.username === id && u.password === password);
+
+   if (user) {
+  localStorage.setItem('currentUser', user.username); // ✅ Save logged-in user
+  window.location.href = "dashboard.html";
+
+    } else {
+      alert("Invalid credentials. Please use the ID you registered with and password 'student' or 'staff'.");
+    }
+
+    return false;
+  }
+</script>
+
+</body>
+</html>
+
+

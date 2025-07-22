@@ -1,0 +1,141 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #003366;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  height: 50px;
+}
+
+header h1 {
+  font-size: 20px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Help Button */
+.help-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  background-color: #ffcc00;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navigation */
+nav {
+  background-color: #004080;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  background-color: #0059b3;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #003366;
+}
+
+/* Complaint Form */
+main {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+main h2 {
+  color: #003366;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #003366;
+}
+
+form input[type="text"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+form button {
+  background-color: #003366;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0059b3;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #003366;
+  color: white;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+}

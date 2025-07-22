@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Account - Complaint System</title>
+  <link rel="stylesheet" href="register.css">
+  <style>
+    .hidden { display: none; }
+    form { max-width: 500px; margin: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Strath.jpg" alt="Strathmore Logo" class="logo">
+  </header>
+
+  <main>
+    <h2>Create an Account</h2>
+
+    <form onsubmit="return registerUser()">
+      <label for="role">I am a:</label>
+      <select id="role" onchange="toggleRoleFields()" required>
+        <option value="">-- Select Role --</option>
+        <option value="student">Student</option>
+        <option value="staff">Staff</option>
+      </select>
+
+      <div id="commonFields">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="text" id="username" placeholder="Admission No. / Staff ID" required>
+        <input type="password" id="regPassword" placeholder="Create Password" required>
+      </div>
+
+      <div id="studentFields" class="hidden">
+        <input type="text" id="course" placeholder="Course">
+      </div>
+
+      <div id="staffFields" class="hidden">
+        <input type="text" id="department" placeholder="Department">
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </main>
+
+  <script>
+  function toggleRoleFields() {
+    const role = document.getElementById('role').value;
+    document.getElementById('studentFields').classList.toggle('hidden', role !== 'student');
+    document.getElementById('staffFields').classList.toggle('hidden', role !== 'staff');
+  }
+
+  function registerUser() {
+    const name = document.getElementById('name').value;
+    const username = document.getElementById('username').value;
+    const role = document.getElementById('role').value;
+    const course = document.getElementById('course').value;
+    const department = document.getElementById('department').value;
+
+    // Automatically assign password
+    const password = role === 'student' ? 'student' : 'staff';
+
+    const user = {
+      name,
+      username,
+      password,
+      role,
+      course: role === 'student' ? course : null,
+      department: role === 'staff' ? department : null
+    };
+
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    // Prevent duplicate username
+    if (users.some(u => u.username === username)) {
+      alert("This ID is already registered.");
+      return false;
+    }
+
+    users.push(user);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    alert('Account created successfully. Your password is "' + password + '". Redirecting to login page...');
+    window.location.href = 'index.html';
+    return false;
+  }
+</script>
+</body>
+</html>
