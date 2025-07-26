@@ -29,6 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('complaints', JSON.stringify(complaints));
 
     alert('Complaint submitted successfully!');
-    window.location.href = 'my_complaints.html'; // Redirect after submitting
+    window.location.href = 'My_complaints.html'; // Redirect after submitting
   });
 });
